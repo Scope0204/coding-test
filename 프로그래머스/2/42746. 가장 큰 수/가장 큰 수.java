@@ -7,11 +7,8 @@ class Solution {
             strNumbers[i] = String.valueOf(numbers[i]);
         }
 
-        Arrays.sort(strNumbers, (s1, s2) -> {
-            int original = Integer.parseInt(s1 + s2);
-            int reversed = Integer.parseInt(s2 + s1);
-            return reversed - original;
-        });
+        Arrays.sort(strNumbers, (s1, s2) -> (s2 + s1).compareTo(s1 + s2));
+
 
         StringBuilder result = new StringBuilder();
         for (String s : strNumbers) {
